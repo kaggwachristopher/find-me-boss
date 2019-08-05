@@ -30,8 +30,10 @@ img.shuffleImage {
 #gameName{
     color: white;
     padding: 0;
-    margin: 0;
-    font-size: 25px;
+	margin: 2vw;
+	letter-spacing: 0.5vw;
+	font-size: 4vw;
+	font-family: Chiller
 }
 
 .playground {
@@ -49,12 +51,20 @@ img.shuffleImage {
 	background-image: url(../images/duke.jpg);
 }
 
+.imageBox:hover {
+	border-radius: 2vh;
+	box-sizing: border-box;
+	overflow: hidden;
+	box-shadow: 5px 5px 20px 5px #ffffff4f;
+	transition-duration: 0.4s;
+}
+
 .borderChange {
-	border: solid 6px orangered !important;
+	border: solid 6px #bfa9a1b8 !important;
 }
 
 .answerBorder {
-	border: solid 6px orange !important;
+	border: solid 6px #695f4d !important;
 }
 
 .result {
