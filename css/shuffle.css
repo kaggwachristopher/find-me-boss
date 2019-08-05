@@ -46,6 +46,7 @@ img.shuffleImage {
 .imageBox {
 	position: relative;
 	zoom: 0.5;
+	box-sizing: border-box;
 	width: 28vw;
 	height: 25vh;
 	background-image: url(../images/duke.jpg);
