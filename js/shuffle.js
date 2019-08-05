@@ -13,42 +13,30 @@ for (let x = 0; x < 10; x++) {
     $("#playBtn").click(function () {   
         $(".imageBox").removeClass("borderChange");
         $(this).hide();
-
         $(".commands").text("Find your car");
         $(".commands").show(500);
+        $(".imageBox").animate({ border: "0" }, 50);
 
+        $(".shuffleImage").slideUp(50);
 
-        $(".imageBox").animate({ border: "0" });
-        $(".shuffleImage").slideToggle();
-        $("#image1").animate({ right: "-45%" }, 900 );
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "45%" }, 900);
-        $("#image1").animate({ right: "0" }, 800);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "0" }, 800);
-        $("#image1").animate({ right: "-45%" }, 700);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "45%" }, 700);
-        $("#image1").animate({ right: "0" }, 400);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "0" }, 400);
-        $("#image1").animate({ right: "-45%" }, 100);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "45%" }, 100);
-        $("#image1").animate({ right: "0" }, 50);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "0" }, 50);
-        $("#image1").animate({ right: "-45%" }, 50);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "45%" }, 50);
-        $("#image1").animate({ right: "0" }, 50);
-        $("#image2").animate({ right: "0" }, 400);
-        $("#image3").animate({ right: "0" }, 50);
+        // shuffle of images by switching their relative positions 
+        $.each([900, 200,700, 300,100,200,100],
+            function(index, value){
+                randomAnimationDuration = Math.floor(Math.random() * value)+50;
+                $("#image1").animate({ right: "-45%" }, randomAnimationDuration );
+                $("#image2").animate({ right: "0" }, randomAnimationDuration);
+                $("#image3").animate({ right: "45%" }, randomAnimationDuration );
+                $("#image1").animate({ right: "0" }, randomAnimationDuration );
+                $("#image2").animate({ right: "0" }, randomAnimationDuration);
+                $("#image3").animate({ right: "0" }, randomAnimationDuration );
+            }
+            );
+           
+            
 
-
-        $("#image3").animate({ "order": Math.floor(Math.random() * 3) + 1 }, 0);
-        $("#image2").animate({ "order": Math.floor(Math.random() * 3) + 1 }, 0);
-        $("#image1").animate({ "order": Math.floor(Math.random() * 3) + 1 }, 0);
+        $("#image3").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
+        $("#image1").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
+        $("#image2").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
 
         $("#checkBtn").show(500);
     });
@@ -130,28 +118,3 @@ for (let x = 0; x < 10; x++) {
     $("#image3").animate({ top: "0" }, "faster");
     $(".imageBox").animate({ zoom: 1 }, "slow");
 });
-
-// function checkResult() {
-//     images = document.getElementsByClassName("imageBox");
-//     secondChoice = document.getElementsByClassName("selected2")
-//     if (images[0].classList.contains("selected2") || images[1].classList.contains("selected2") || images[2].classList.contains("selected2")) {
-//       if (secondChoice[0].classList.contains("selected")){
-//         alert("congratulations YOU WIN")
-//       }
-//       else{
-//           alert("You Lose");
-//       }
-//     }
-//     else{
-//         alert("Please Choose Your Card");
-//     }
-// }
-
-// function validShuffle() {
-//     images = document.getElementsByClassName("imageBox");
-//     selectedCard = document.getElementsByClassName("selected")
-//     if (images[0].classList.contains("selected") || images[1].classList.contains("selected") || images[2].classList.contains("selected")) {
-//         document.getElementsById("playBtn").style.display="inlineBlock";
-//     }
- 
-// }
