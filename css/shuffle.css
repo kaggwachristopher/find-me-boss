@@ -6,6 +6,15 @@ html {
 	background: black;
 }
 
+.navWrap{
+	display: flex;
+	align-items: center;
+	position: absolute;
+	width: 95%;
+	margin: 2%;
+	justify-content: space-between;
+}
+
 img.shuffleImage {
 	width: 100%;
 	height: 100%;
@@ -29,10 +38,9 @@ img.shuffleImage {
 
 #gameName{
     color: white;
-    margin: 3vh;
-    position: absolute;
     letter-spacing: 0.5vw;
     font-weight: 900;
+    margin: 0;
     font-size: 4vw;
     font-family: Chiller;
 }
@@ -50,7 +58,9 @@ img.shuffleImage {
 	box-sizing: border-box;
 	width: 28vw;
 	height: 25vh;
-	background-image: url(../images/duke.jpg);
+	background-size: cover;
+	background-position: center;
+	background-image: url(../images/bg2.jpg);
 }
 
 .imageBox:hover {
@@ -62,15 +72,15 @@ img.shuffleImage {
 }
 
 .borderChange {
-	border: solid 6px #bfa9a1b8 !important;
+	border: solid 6px #ffffff8f !important;
 }
 
 .answerBorder {
-	border: solid 6px #695f4d !important;
+	border: solid 6px #a4927166 !important;
 }
 
 .result {
-	font-size: 5vw;
+	font-size: 4vw;
 	font-weight: bolder;
 	color: white;
 	letter-spacing: 3px;
@@ -79,7 +89,7 @@ img.shuffleImage {
 
 .commands {
 	font-size: 4vw;
-	color: wheat;
+	color: beige;
 	letter-spacing: 3px;
 	font-family: Jokerman, sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
 }
@@ -98,5 +108,50 @@ button {
 button:hover {
     background: white;
     color: black;
-    transition-duration: 1s;
+    outline: none;
+    border-radius: 1vw;
+    transition-duration: 0.8s;
+}
+
+progress[value] {
+  border-radius: 1px;
+}
+
+progress{
+	height:30px;
+	border: ridge;
+	border-bottom: 0;
+	border-right: 0;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(top, 
+	                           rgb(255, 255, 255), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #f5deb3bf, #000000e8);
+border-top-right-radius:9px;
+    background-size:cover;
+}
+.scoreLabel{
+	color: white;
+	font-family: chiller;
+	font-size: 3.5vw;
+	letter-spacing: 2px;
+	margin-right: 7px;
+}
+
+.scoreContainer {
+    align-items: center;
+    display: flex;
+}
+
+progress:hover {
+    box-shadow: -6px -5px 20px 2px #916b6b;
+    transition-duration: 0.3s;
+}
+
+nav {
+    padding: -4px;
+    width: 100%;
 }
