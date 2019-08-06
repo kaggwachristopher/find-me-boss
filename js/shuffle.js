@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    $("progress").attr("value", "0");
     $("#checkBtn").hide();
     $("#playBtn").hide();
     $(".newGame").hide();
@@ -16,13 +16,12 @@ for (let x = 0; x < 10; x++) {
         $(".commands").text("Find your car");
         $(".commands").show(500);
         $(".imageBox").animate({ border: "0" }, 50);
-
         $(".shuffleImage").slideUp(50);
 
         // shuffle of images by switching their relative positions 
-        $.each([900, 200,700, 300,100,200,100],
+        $.each([900, 600,700, 1000,2000,200,500],
             function(index, value){
-                randomAnimationDuration = Math.floor(Math.random() * value)+50;
+                randomAnimationDuration = Math.floor(Math.random() * value)+100;
                 $("#image1").animate({ right: "-45%" }, randomAnimationDuration );
                 $("#image2").animate({ right: "0" }, randomAnimationDuration);
                 $("#image3").animate({ right: "45%" }, randomAnimationDuration );
@@ -48,7 +47,6 @@ for (let x = 0; x < 10; x++) {
         if ($(".newGame").css('display') == 'none'){
 
         $(".imageBox").removeClass("borderChange");
-
         if ($("#checkBtn").css('display') == 'none') {
             $("#playBtn").show(500);
         } else {
@@ -57,6 +55,7 @@ for (let x = 0; x < 10; x++) {
 
         $(this).addClass("borderChange");
         if ($("#playBtn").css('display')=='none') {
+            $(".imageBox").removeClass("selected2");
             $(this).addClass("selected2");
             $(".imageBox").removeClass("answerBorder");
             $(this).addClass("answerBorder");
@@ -65,6 +64,11 @@ for (let x = 0; x < 10; x++) {
             $(this).addClass("selected",7000);
         }
     }
+    else{
+            $(".newGame").animate({ zoom: "1.1", opacity: "0.3"},200);
+            $(".newGame").animate({ zoom: "1", opacity: "1" }, 200);
+    }
+
     });
 
     $(".newGame").click(function () {
@@ -87,11 +91,14 @@ for (let x = 0; x < 10; x++) {
 
     $("#checkBtn").click(function () {
 
-        
         if ($("#image1").hasClass("selected2") || $("#image2").hasClass("selected2") || $("#image3").hasClass("selected2")) {
             $(".shuffleImage").fadeIn();
             if($(".selected2").hasClass("selected")){
                 $(".result").text("YOU WIN");
+
+                currentScore = parseInt($("progress").attr("value"));
+                $("progress").attr("value", currentScore + 10);
+
                 $(".result").animate({ zoom: "3" }, 800);
                 $(".result").animate({ zoom: "1" }, 800);
                     } else {
