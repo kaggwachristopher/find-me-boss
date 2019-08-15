@@ -31,8 +31,6 @@ for (let x = 0; x < 10; x++) {
             }
             );
            
-            
-
         $("#image3").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
         $("#image1").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
         $("#image2").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);

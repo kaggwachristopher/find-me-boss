@@ -1,6 +1,6 @@
 body,
 html {
-	height: 100%;
+	height: 100vh;
 	margin: 0;
 	padding: 0;
 	background: black;
@@ -69,6 +69,7 @@ img.shuffleImage {
 	overflow: hidden;
 	box-shadow: 5px 5px 20px 5px #ffffff4f;
 	transition-duration: 0.4s;
+	cursor: pointer;
 }
 
 .borderChange {
@@ -106,9 +107,9 @@ button {
 
 
 button:hover {
-    background: white;
-    color: black;
-    outline: none;
+	outline: none;
+	background: white;
+	color: inherit;
     border-radius: 1vw;
     transition-duration: 0.8s;
 }
@@ -154,4 +155,33 @@ progress:hover {
 nav {
     padding: -4px;
     width: 100%;
+}
+
+.footerButtons {
+    padding: 1.5vw;
+    width: 3vw;
+    color: white;
+    border: solid;
+    background: inherit;
+    cursor: default;
+    height: 3vw;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerButtons:hover {
+    transition-duration: 0.9s;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    background: inherit;
+}
+
+.footerWrap {
+    display: flex;
+    justify-content: space-evenly;
 }

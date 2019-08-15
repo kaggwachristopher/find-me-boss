@@ -8,38 +8,49 @@
 		<link rel="stylesheet" href="./css/shuffle.css" />
 		<script src="./js/jquery1.11.1.min.js"></script>
 		<script src="./js/shuffle.js"></script>
+		<script src="./js/bgChange.js"></script>
 	</head>
-	<body>
+	<body class="themeChange">
 		<nav>
 			<div class="navWrap">
 				<h4 id="gameName">Find Me Boss</h4>
 				<div class="scoreContainer">
-                    <span class="scoreLabel">Score</span>
-					<progress max="100">
-					</progress>
+					<span class="scoreLabel">Score</span>
+					<progress max="100"> </progress>
 				</div>
 			</div>
 		</nav>
-
-		<div class="playground">
-			<div class="result"></div>
-			<div class="commands"></div>
-			<div class="imageContainer">
-				<div class="imageBox" id="image1">
-					<img class="shuffleImage" src="./images/img1.jpg" alt="" />
+		<section>
+			<div class="playground">
+				<div class="result"></div>
+				<div class="commands"></div>
+				<div class="imageContainer">
+					<div class="imageBox" id="image1">
+						<img class="shuffleImage" src="./images/img1.jpg" alt="" />
+					</div>
+					<div class="imageBox" id="image2">
+						<img class="shuffleImage" src="./images/img2.jpg" alt="" />
+					</div>
+					<div class="imageBox" id="image3">
+						<img class="shuffleImage" src="./images/img3.jpg" alt="" />
+					</div>
 				</div>
-				<div class="imageBox" id="image2">
-					<img class="shuffleImage" src="./images/img2.jpg" alt="" />
-				</div>
-				<div class="imageBox" id="image3">
-					<img class="shuffleImage" src="./images/img3.jpg" alt="" />
+				<div class="buttonsContainer">
+					<button class="changeItems" id="playBtn">shuffle</button>
+					<button class="changeItems" id="checkBtn">Check</button>
+					<button class="newGame changeItems">Play Again</button>
 				</div>
 			</div>
-			<div class="buttonsContainer">
-				<button id="playBtn">shuffle</button>
-				<button id="checkBtn">Check</button>
-				<button class="newGame">Play Again</button>
+		</section>
+		<footer>
+			<div class="footerWrap">
+				<span class="bgChange changeItems footerButtons" title="Change Theme">
+					BG
+				</span>
+				<span class="tileChange changeItems footerButtons" title="Change Theme">
+					TT
+				</span>
 			</div>
-		</div>
+		</footer>
 	</body>
 </html>
