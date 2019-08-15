@@ -94,7 +94,7 @@ img.shuffleImage {
 	letter-spacing: 3px;
 	font-family: Jokerman, sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
 }
-button {
+.buttonsContainer button {
 	color: white;
 	outline: none;
 	background: transparent;
@@ -106,7 +106,7 @@ button {
 }
 
 
-button:hover {
+.buttonsContainer button:hover {
 	outline: none;
 	background: white;
 	color: inherit;
