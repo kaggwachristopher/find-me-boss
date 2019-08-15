@@ -2,3 +2,12 @@
 
 # find-me-boss
 A web game
+
+## Build with
+` HTML`
+`CSS`
+`JQUERY`
+
+
+## Link to game
+https:kaggwachristopher.github.io/find-me-boss
