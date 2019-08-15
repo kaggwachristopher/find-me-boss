@@ -17,6 +17,7 @@ for (let x = 0; x < 10; x++) {
         $(".commands").show(500);
         $(".imageBox").animate({ border: "0" }, 50);
         $(".shuffleImage").slideUp(50);
+        $(".imageBox").css('pointer-events', "none");
 
         // shuffle of images by switching their relative positions 
         $.each([900, 600,700, 1000,2000,200,500],
@@ -29,20 +30,20 @@ for (let x = 0; x < 10; x++) {
                 $("#image2").animate({ right: "0" }, randomAnimationDuration);
                 $("#image3").animate({ right: "0" }, randomAnimationDuration );
             }
-            );
-           
-            
 
+            );           
         $("#image3").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
         $("#image1").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
-        $("#image2").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0);
-
-        $("#checkBtn").show(500);
+        $("#image2").animate({ order: Math.floor(Math.random() * 3) + 1 }, 0,);
+        $("#image2").animate({ cursor: "default" }, 0,function(){
+            $(".imageBox").css('pointer-events', "unset");
+            $("#checkBtn").show(500);
+        });
     });
 
     $(".imageBox").click(function () {
-
         $(".commands").hide(500);
+        $(".cardSound").trigger("play");
 
         if ($(".newGame").css('display') == 'none'){
 
@@ -94,6 +95,7 @@ for (let x = 0; x < 10; x++) {
         if ($("#image1").hasClass("selected2") || $("#image2").hasClass("selected2") || $("#image3").hasClass("selected2")) {
             $(".shuffleImage").fadeIn();
             if($(".selected2").hasClass("selected")){
+                $(".winSound").trigger("play");
                 $(".result").text("YOU WIN");
 
                 currentScore = parseInt($("progress").attr("value"));
@@ -102,6 +104,7 @@ for (let x = 0; x < 10; x++) {
                 $(".result").animate({ zoom: "3" }, 800);
                 $(".result").animate({ zoom: "1" }, 800);
                     } else {
+                $(".loseSound").trigger("play");
                 $(".result").text("YOU LOSE");
                 $(".result").animate({ zoom: "3" },800);
                 $(".result").animate({ zoom: "2" }, 800);
@@ -114,6 +117,7 @@ for (let x = 0; x < 10; x++) {
         else{
             $(".commands").animate({opacity:"0.3"},500);
             $(".commands").text("Find your car please!!!");
+            $(".errorSound").trigger("play");
             $(".commands").animate({ opacity: "1" }, 500);
         }
         
