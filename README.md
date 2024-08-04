@@ -10,4 +10,4 @@ A web game
 
 
 ## Link to game
-https:kaggwachristopher.github.io/find-me-boss
+https://kaggwachristopher.github.io/find-me-boss
